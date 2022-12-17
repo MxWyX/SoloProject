@@ -1,0 +1,21 @@
+
+.red {
+  background-color: red;
+  margin: 1rem;
+  display: inline;
+}
+
+.green {
+  background-color: green;
+  margin: 1rem;
+
+  display: inline;
+}
+
+.default {
+  background-color: black;
+}
+
+.image {
+  display: inline;
+}
