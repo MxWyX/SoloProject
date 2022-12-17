@@ -9,9 +9,9 @@ const CallAPI = (id) => {
   });
 };
 
-const GetPoke2 = async (id) => {
+const GetPoke = async (id) => {
   const res = await CallAPI(id);
   return res;
 };
 
-export default GetPoke2;
+export default GetPoke;

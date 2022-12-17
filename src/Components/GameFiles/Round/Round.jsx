@@ -1,41 +1,38 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./RoundStyle.css";
 
-const Round1 = (guess, target, sprite) => {
+const Round = ({ guess, target }) => {
+  console.log(target);
   return (
     <div className="round">
-      <section className={guess.guess.id === guess.target.id ? "green" : "red"}>
-        {guess.guess.id}
+      <section className={guess.id === target.id ? "green" : "red"}>
+        {guess.id}
       </section>
-      <section
-        className={guess.guess.height === guess.target.height ? "green" : "red"}
-      >
-        {guess.guess.height}
-        {guess.guess.height != guess.target.height
-          ? guess.guess.height > guess.target.height
-            ? " too high "
-            : " too low "
+      <section className={guess.height === target.height ? "green" : "red"}>
+        {guess.height}
+        {guess.height
+          ? guess.height != target.height
+            ? guess.height > target.height
+              ? " too high "
+              : " too low "
+            : ""
           : ""}
       </section>
-      <section
-        className={guess.guess.weight === guess.target.weight ? "green" : "red"}
-      >
-        {guess.guess.weight}
-        {guess.guess.weight !== guess.target.weight
-          ? guess.guess.weight > guess.target.weight
-            ? " too high "
-            : " too low "
+      <section className={guess.weight === target.weight ? "green" : "red"}>
+        {guess.weight}
+        {guess.weight
+          ? guess.weight !== target.weight
+            ? guess.weight > target.weight
+              ? " too high "
+              : " too low "
+            : ""
           : ""}
       </section>
-      <section
-        className={guess.guess.type1 === guess.target.type1 ? "green" : "red"}
-      >
-        {guess.guess.type1}
+      <section className={guess.type1 === target.type1 ? "green" : "red"}>
+        {guess.type1}
       </section>
-      <section
-        className={guess.guess.type2 === guess.target.type2 ? "green" : "red"}
-      >
-        {guess.guess.type2}
+      <section className={guess.type2 === target.type2 ? "green" : "red"}>
+        {guess.type2}
       </section>
       <section className="image">
         <img src={guess.sprite} alt="" />
@@ -44,4 +41,4 @@ const Round1 = (guess, target, sprite) => {
   );
 };
 
-export default Round1;
+export default Round;
