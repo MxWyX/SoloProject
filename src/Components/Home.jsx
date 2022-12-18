@@ -1,4 +1,5 @@
 import { Avatar, Button, Divider, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Container } from "semantic-ui-react";
 import "./Home.css";
@@ -27,7 +28,7 @@ const Home = () => {
   };
   return (
     <div>
-      <Container className="hero">
+      <Box className="hero" sx={{ mx: 5 }}>
         <Avatar
           src={require("./Imgs/Max.jpg")}
           alt="My dog being held by me."
@@ -46,7 +47,7 @@ const Home = () => {
             eventually become a full stack developer.
           </p>
         </section>
-      </Container>
+      </Box>
       <Divider variant="middle" />
       <section className="bottom">
         <section className="contact-me">

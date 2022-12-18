@@ -26,8 +26,7 @@
 }
 
 .labels p {
-  margin-right: 4rem;
-  text-overflow: ellipsis;
+  margin-right: 3.5rem;
 }
 
 .guesses::before {

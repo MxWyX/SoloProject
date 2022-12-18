@@ -76,20 +76,20 @@ const Pordle = () => {
           placeGuess={placeGuess}
         />
       )}
-      <div className="game-container">
-        <div className="labels">
+      <section className="game-container">
+        <section className="labels">
           <p>ID</p>
           <p>Height</p>
           <p>Weight</p>
           <p>Type 1</p>
           <p>Type 2</p>
-        </div>
+        </section>
         <section className="guesses">
           {guesses.map((guess, index) => (
             <Round key={index} guess={guess} target={target} />
           ))}
         </section>
-      </div>
+      </section>
     </div>
   );
 };
