@@ -2,29 +2,38 @@ import React from "react";
 import "./RoundStyle.css";
 
 const Round = ({ guess, target }) => {
-  console.log(target);
   return (
     <div className="round">
       <section className={guess.id === target.id ? "green" : "red"}>
-        {guess.id}
+        {"#" + guess.id}
+        <br />
+        {guess.id
+          ? guess.id !== target.id
+            ? guess.id > target.id
+              ? " High "
+              : " Low "
+            : ""
+          : ""}
       </section>
       <section className={guess.height === target.height ? "green" : "red"}>
-        {guess.height}
+        {guess.height / 10 + "m"}
+        <br />
         {guess.height
-          ? guess.height != target.height
+          ? guess.height !== target.height
             ? guess.height > target.height
-              ? " too high "
-              : " too low "
+              ? " High "
+              : " Low "
             : ""
           : ""}
       </section>
       <section className={guess.weight === target.weight ? "green" : "red"}>
-        {guess.weight}
+        {guess.weight / 10 + "kg"}
+        <br />
         {guess.weight
           ? guess.weight !== target.weight
             ? guess.weight > target.weight
-              ? " too high "
-              : " too low "
+              ? " High "
+              : " Low "
             : ""
           : ""}
       </section>
@@ -34,9 +43,7 @@ const Round = ({ guess, target }) => {
       <section className={guess.type2 === target.type2 ? "green" : "red"}>
         {guess.type2}
       </section>
-      <section className="image">
-        <img src={guess.sprite} alt="" />
-      </section>
+      <img className="image" src={guess.sprite} alt="" />
     </div>
   );
 };

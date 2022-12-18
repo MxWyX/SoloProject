@@ -1,4 +1,6 @@
+import { Avatar, Button, Divider, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { Container } from "semantic-ui-react";
 import "./Home.css";
 
 const Home = () => {
@@ -25,11 +27,16 @@ const Home = () => {
   };
   return (
     <div>
-      <section className="hero">
-        <img src={require("./Imgs/Max.jpg")} alt="My dog being held by me." />
+      <Container className="hero">
+        <Avatar
+          src={require("./Imgs/Max.jpg")}
+          alt="My dog being held by me."
+          sx={{ width: 200, height: 200 }}
+        />
         <section className="details">
-          <h1>I'm Max</h1>
+          <h1>I'm Max Wykes,</h1>
           <h2>I'm a new Front End Developer</h2>
+          <Divider />
           <p>
             I'm looking for entry level remote roles that will allow me to build
             on my skills.
@@ -39,23 +46,46 @@ const Home = () => {
             eventually become a full stack developer.
           </p>
         </section>
-      </section>
-      <section className="contact-me">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" required />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required />
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" required />
-          </div>
-          <button type="submit">{status}</button>
-        </form>
+      </Container>
+      <Divider variant="middle" />
+      <section className="bottom">
+        <section className="contact-me">
+          <form onSubmit={handleSubmit}>
+            <TextField
+              label="Name"
+              varient="outlined"
+              size="small"
+              sx={{ my: 1 }}
+              type="text"
+              id="name"
+              required
+            />
+            <TextField
+              label="Email"
+              varient="outlined"
+              size="small"
+              sx={{ my: 1 }}
+              type="email"
+              id="email"
+              required
+            />
+            <TextField
+              label="Message"
+              varient="outlined"
+              multiline
+              rows={3}
+              size="small"
+              sx={{ my: 1 }}
+              id="message"
+              required
+            />
+            <Button variant="outlined" type="submit" sx={{ my: 1 }}>
+              {status}
+            </Button>
+          </form>
+        </section>
+        <Divider />
+        <section className="reviews"></section>
       </section>
     </div>
   );

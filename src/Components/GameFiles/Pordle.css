@@ -1,0 +1,37 @@
+
+@font-face {
+  font-family: 'pokemon';
+  src: local('PokemonSolidNormal'),
+  url('../../fonts/PokemonSolidNormal.ttf') format('truetype');
+}
+
+.main {
+  font-family: 'pokemon';
+  letter-spacing: 2px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto auto auto;
+  padding: 0  2rem 2rem 2rem;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.labels {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.labels p {
+  margin-right: 4rem;
+  text-overflow: ellipsis;
+}
+
+.guesses::before {
+  content: "";
+  display: block;
+  border: 1px solid black;
+}

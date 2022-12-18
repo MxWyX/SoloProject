@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -7,18 +8,38 @@
 }
 
 .hero {
-  margin: 1rem;
-  padding: 2rem;
-  border: gray solid 1px;
+  margin: 1.5rem;
   border-radius: 3px;
   display: flex;
 }
 
 .details {
+  text-align: left;
+  padding: 1rem;
   margin: 1rem;
-  padding: 2rem;
-  border: gray solid 1px;
+  border: rgba(128, 128, 128, 0.35) solid 1px;
   border-radius: 3px;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
+}
+
+h1, h2 {
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-top: 0.25rem;
+}
+
+.bottom {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
 }

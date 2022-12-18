@@ -1,0 +1,14 @@
+.guess {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+input {
+  margin-right: 1rem;
+}
+
+button,
+input {
+  padding: 0.25rem;
+  display: inline;
+}
