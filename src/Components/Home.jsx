@@ -1,7 +1,5 @@
-import { Avatar, Button, Divider, TextField } from "@mui/material";
-import { Box } from "@mui/system";
+import { Avatar, Button, Divider, TextField, Box } from "@mui/material";
 import React, { useState } from "react";
-import { Container } from "semantic-ui-react";
 import { faker } from "@faker-js/faker";
 import "./Home.css";
 
