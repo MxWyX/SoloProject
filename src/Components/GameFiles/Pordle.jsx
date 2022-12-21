@@ -12,6 +12,7 @@ const Pordle = () => {
   const [target, setTarget] = useState({});
   const [round, setRound] = useState(0);
   const [input, setInput] = useState("");
+  const [error, setError] = useState("");
   const [win, setWin] = useState(0);
 
   useEffect(() => {
@@ -33,9 +34,21 @@ const Pordle = () => {
   };
 
   const placeGuess = async (guess, guesses, target, round) => {
-    if (!input.length || input > 905 || input < 1) return;
+    if (!input.length || input > 905 || input < 1) {
+      setError("Oops, that's not a pokemon. Please try again.");
+      return;
+    } else {
+      setError("");
+    }
     const { data, status } = await GetPoke(input);
-    if (status !== 200) return;
+    console.log(status);
+    console.log(data);
+    if (status !== 200) {
+      setError("Sorry, something went wrong. please try again.");
+      return;
+    } else {
+      setError("");
+    }
     const newGuess = {
       id: data?.id,
       height: data?.height,
@@ -72,6 +85,7 @@ const Pordle = () => {
           target={target}
           round={round}
           win={win}
+          error={error}
           setInput={setInput}
           placeGuess={placeGuess}
         />

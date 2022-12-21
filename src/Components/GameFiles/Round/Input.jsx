@@ -7,6 +7,7 @@ const Input = ({
   target,
   round,
   win,
+  error,
   setInput,
   placeGuess,
 }) => {
@@ -16,6 +17,7 @@ const Input = ({
         placeholder="Guess a Pokemon here"
         type="text"
         onChange={(e) => setInput(e.target.value)}
+        // set input to nothing when pressing guess
       />
       <button
         variant="contained"
@@ -23,6 +25,9 @@ const Input = ({
       >
         Guess
       </button>
+      <section>
+        <p>{error}</p>
+      </section>
     </section>
   );
 };
