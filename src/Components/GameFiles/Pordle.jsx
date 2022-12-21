@@ -41,8 +41,6 @@ const Pordle = () => {
       setError("");
     }
     const { data, status } = await GetPoke(input);
-    console.log(status);
-    console.log(data);
     if (status !== 200) {
       setError("Sorry, something went wrong. please try again.");
       return;
@@ -64,7 +62,11 @@ const Pordle = () => {
   };
 
   const Restart = () => {
-    console.log("press refresh");
+    setGuesses([]);
+    setGuess("");
+    setRound(0);
+    setWin(0);
+    startGame();
   };
 
   return (
