@@ -38,8 +38,6 @@ const Input = ({
     message = `You lose.`;
   }
 
-  console.log(target);
-
   return (
     <div>
       {!message ? (
