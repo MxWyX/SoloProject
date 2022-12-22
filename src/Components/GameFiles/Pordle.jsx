@@ -12,7 +12,6 @@ const Pordle = () => {
   const [round, setRound] = useState(0);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const [win, setWin] = useState(0);
 
   useEffect(() => {
     startGame();
@@ -64,7 +63,6 @@ const Pordle = () => {
     setGuesses([]);
     setGuess("");
     setRound(0);
-    setWin(0);
     startGame();
   };
 
@@ -76,8 +74,6 @@ const Pordle = () => {
         target={target}
         round={round}
         error={error}
-        win={win}
-        setWin={setWin}
         Restart={Restart}
         setInput={setInput}
         placeGuess={placeGuess}
@@ -97,8 +93,6 @@ const Pordle = () => {
               guess={guess}
               target={target}
               round={round}
-              win={win}
-              setWin={setWin}
               Restart={Restart}
             />
           ))}
