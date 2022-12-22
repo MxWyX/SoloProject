@@ -12,3 +12,23 @@ input {
   padding: 0.25rem;
   display: inline;
 }
+
+
+.restart {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-self: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-left: 1rem;
+  padding: 0.25rem;
+}

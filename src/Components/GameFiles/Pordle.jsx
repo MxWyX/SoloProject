@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import GetPoke from "./GetPoke";
 import Round from "./Round/Round";
-import Results from "./Round/Results";
+import Input from "./Round/Input";
 import "../../fonts/PokemonSolidNormal.ttf";
 import "./Pordle.css";
-import Input from "./Round/Input";
 
 const Pordle = () => {
   const [guess, setGuess] = useState({});
@@ -33,7 +32,7 @@ const Pordle = () => {
     setTarget(newTarget);
   };
 
-  const placeGuess = async (guess, guesses, target, round) => {
+  const placeGuess = async (guess, guesses, round) => {
     if (!input.length || input > 905 || input < 1) {
       setError("Oops, that's not a pokemon. Please try again.");
       return;
@@ -71,27 +70,18 @@ const Pordle = () => {
 
   return (
     <div className="main">
-      {round === 5 || win > 0 ? (
-        <Results
-          guess={guess}
-          target={target}
-          round={round}
-          setWin={setWin}
-          win={win}
-          Restart={Restart}
-        />
-      ) : (
-        <Input
-          guess={guess}
-          guesses={guesses}
-          target={target}
-          round={round}
-          win={win}
-          error={error}
-          setInput={setInput}
-          placeGuess={placeGuess}
-        />
-      )}
+      <Input
+        guess={guess}
+        guesses={guesses}
+        target={target}
+        round={round}
+        error={error}
+        win={win}
+        setWin={setWin}
+        Restart={Restart}
+        setInput={setInput}
+        placeGuess={placeGuess}
+      />
       <section className="game-container">
         <section className="labels">
           <p>ID</p>
@@ -102,7 +92,15 @@ const Pordle = () => {
         </section>
         <section className="guesses">
           {guesses.map((guess, index) => (
-            <Round key={index} guess={guess} target={target} />
+            <Round
+              key={index}
+              guess={guess}
+              target={target}
+              round={round}
+              win={win}
+              setWin={setWin}
+              Restart={Restart}
+            />
           ))}
         </section>
       </section>
