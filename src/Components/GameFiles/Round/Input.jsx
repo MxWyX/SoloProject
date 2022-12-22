@@ -39,7 +39,6 @@ const Input = ({
   }
 
   console.log(target);
-  console.log(winList);
 
   return (
     <div>
