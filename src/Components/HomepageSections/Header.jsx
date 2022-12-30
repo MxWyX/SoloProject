@@ -4,7 +4,7 @@ import { Box, Avatar, Divider } from "@mui/material";
 const Header = () => {
   return (
     <div>
-      <Box className="hero" sx={{ mx: 5 }}>
+      <Box sx={{ mx: 5, display: "flex", justifyContent: "center", my: 6 }}>
         <Avatar
           src={require("../Imgs/Max.jpg")}
           alt="My dog being held by me."
